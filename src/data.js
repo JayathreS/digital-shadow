@@ -1,0 +1,23 @@
+export const FEATURES=[['recognise','Recognise','Understand potential online warning signs.'],['protect','Protect','Strengthen your digital privacy.'],['preserve','Preserve','Learn how to document relevant incidents safely.'],['act','Act','Explore reporting and support options.']]
+export const TYPES=['Suspicious message','Suspicious link','Fake or impersonation profile','Online harassment','Unwanted repeated contact']
+export const SCENARIOS=[['Account suspension','Your account will be suspended today. Verify your password immediately using this link: http://secure-login.example-verify.xyz'],['Fake support','Hello, we are from the official security team. Send the OTP you just received to confirm your identity.'],['Repeated contact','Why are you ignoring me? Reply now. I will keep messaging you until you answer me.'],['Harmless message','Hi! Are we still meeting for the project discussion at 4 pm in the library?']]
+export const RULES=[
+['urgent','Urgent or pressuring language','Scams often rush you so you act before thinking.',/\b(urgent|immediately|right now|today|within \d+ (hours?|minutes?)|suspended|last chance|act now|expires?)\b/i],
+['secret','Request for passwords, OTPs or PINs','Genuine services never ask you to share these.',/\b(password|otp|one[- ]time|pin|cvv|verification code|passcode)\b/i],
+['personal','Request for personal information','Requests for identity, bank or personal details can be used for fraud or misuse.',/\b(aadhaar|aadhar|bank|card number|address|date of birth|dob|id proof|selfie|verify (your )?(details|identity))\b/i],
+['link','Link or web address included','Unfamiliar links can lead to fake login pages. Do not open it; check through the official app instead.',/(https?:\/\/|www\.|\b[a-z0-9-]+\.(com|in|xyz|top|click|link|info)\b|bit\.ly)/i],
+['imp','Possible impersonation wording','The message claims to speak for an official team or authority. Verify through official channels.',/\b(official|support team|security team|admin|customer care|we are from|on behalf of)\b/i],
+['repeat','Pressure or repeated contact wording','Repeated demands for replies can be a form of unwanted contact.',/\b(again|keep (messaging|calling)|why (are you )?ignor\w*|reply (now|me)|stop ignoring|answer me)\b/i],
+['threat','Threatening or abusive wording','Threats or abuse can be reported to the platform and, where appropriate, to authorities.',/\b(leak|expose|ruin you|i will find|share your (photos|pictures)|kill|hurt you)\b/i]]
+export const STEPS=['Do not share passwords, OTPs or personal details.','Do not open the link. Check your account through the official app or website.','Note the sender, date, time and platform (see Preserve).','Block or restrict the sender and report them on the platform if you choose.']
+export const CHECK=[
+['Account Security','Strong accounts are harder to take over.',['Enable two-factor authentication','Use unique passwords','Review active sessions','Update account recovery details']],
+['Social Media Privacy','Control who can see you and contact you.',['Review account visibility','Restrict unwanted messages','Review tagged posts','Check profile privacy settings']],
+['Device Security','A secure phone protects everything on it.',['Keep software updated','Review app permissions','Enable screen locking','Avoid unknown downloads']],
+['Communication Safety','Habits that stop most scams.',['Never share OTPs or passwords','Independently verify unexpected requests','Block or restrict unwanted contact where appropriate']]]
+export const EVID=['Record the date and approximate time','Record the sender\u2019s username or identifier','Preserve relevant messages where safe and appropriate','Record URLs as text without opening suspicious links','Note the platform','Avoid modifying original evidence','Store information securely','Avoid unnecessary forwarding of sensitive content']
+export const DEMO=[
+['Recognise','A student receives a message from an unknown account saying her account will be suspended unless she verifies her details immediately.',['Unknown sender','Urgent language','Request for sensitive information','Suspicious link']],
+['Protect','Keep control of your accounts.',['Do not share credentials','Do not open suspicious links','Verify through the platform\u2019s official app or website','Review account security']],
+['Preserve','Write down what matters, as text.',['Sender identifier','Date and time','Relevant message details','Platform information']],
+['Act','Choose what to do next.',['Use platform reporting tools','Block or restrict unwanted contact if appropriate','Consult suitable support channels']]]
